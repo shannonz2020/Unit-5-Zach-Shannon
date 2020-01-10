@@ -1,4 +1,4 @@
-public class Num {
+public class Num implements Comparable{
     private int value;
 
     //constructors
@@ -17,15 +17,13 @@ public class Num {
     public void setValue(int value) {
         this.value = value;
     }
-
-    @Override
     public String toString() {
         return "" + value;
     }
+    public boolean equals(Num someNum){ return this.value == someNum.getValue(); }
 
-    public boolean equals(Num someNum){
-        return this.value == someNum.getValue();
+    public int compareTo(Object anotherOtherSecondObject){
+        Num otherNum = (Num) anotherOtherSecondObject;
+        return this.getValue() - otherNum.getValue();
     }
-
-
 }
