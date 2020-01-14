@@ -4,27 +4,11 @@ public class DieAgain implements Lockable {
     private int key = 0;
     private boolean isLocked = false;
 
-    public DieAgain(){
-        face = 1;
-    }
+    public DieAgain(){ face = 1; }
 
     public void roll(){
         if (!isLocked){
             face = (int) (Math.random() * (6) + 1);
-        }
-    }
-
-    public void setFace(int face) {
-        if (!isLocked){
-            this.face = face;
-        }
-    }
-
-    public int getFace() {
-        if (!isLocked){
-            return face;
-        }else{
-            return -1;
         }
     }
     public String toString() {
@@ -34,6 +18,15 @@ public class DieAgain implements Lockable {
             return "This class is locked";
         }
     }
+
+    public void setFace(int face) {
+        this.face = face;
+    }
+    public int getFace() {
+        return face;
+    }
+
+    //Lockable stuff
     public void setKey(int key){
         if (!isLocked){
             this.key = key;
